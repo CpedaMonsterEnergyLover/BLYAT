@@ -1,0 +1,23 @@
+{% extends 'root.html' %}
+{% block title %}
+    круизы
+{% endblock %}
+{%  block content %}
+{% include 'header.html' with selected_cruise=True %}
+<div>
+    {% include 'button_add.html' with title='Список всех круизов' path='/cruise/new' button='круиз' %}
+    <div class="list">
+        {% for data in dataset %}
+        Название: {{ data.name }}<br/>
+        Длительность: {{ data.days }} дней<br/>
+        Протяженность: {{ data.length }} км<br/>
+        Кол-во остановок: {{ data.stops }}<br/><br/>
+        {% if access %}
+        <a class="btn_add" href="http://127.0.0.1:8000/cruise/{{ data.id }}/update">Изменить</a>
+        <a class="btn_add" href="http://127.0.0.1:8000/cruise/{{ data.id }}/delete">Удалить</a>
+        {% endif %}
+        <hr/>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

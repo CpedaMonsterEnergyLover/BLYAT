@@ -1,0 +1,10 @@
+<div class="header" style="margin-bottom: 8px">
+    Доступ: {{ access }}<br/>
+    {% if user.is_authenticated %}
+        Пользователь: {{ user.username }}
+        <a href="/exit" class="btn_add">Выйти</a>
+    {% else %}
+        <a href="/accounts/login" class="btn_add">Войти</a>
+        <a href="/accounts/register" class="btn_add">Регистрация</a>
+    {% endif %}<br/>
+</div>

@@ -1,0 +1,22 @@
+<style>
+    .selected{
+        background: #ffa192;
+    }
+</style>
+<div class="header">
+    <div class="{% if selected_cruise %}selected{% endif %}">
+        <a href="/cruise/list">
+                    Круизы
+        </a>
+    </div>
+    <div class="{% if selected_liner %}selected{% endif %}">
+        <a href="/liner/list">
+                    Лайнеры
+        </a>
+    </div>
+    <div class="{% if selected_excursion %}selected{% endif %}">
+        <a href="/excursion/list">
+                    Экскурсии
+        </a>
+    </div>
+</div>

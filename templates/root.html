@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<style>
+    .header{
+        display: flex;
+        flex-direction: row;
+        width: 500px;
+        height: 35px;
+        align-items: center;
+        background: beige;
+        justify-content: space-evenly;
+    }
+    .title{
+        display: flex;
+        flex-direction: row;
+        width: 500px;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .btn_add{
+        background: aquamarine;
+        border-radius: 5px;
+        box-shadow: black 3px 3px;
+        padding: 3px;
+    }
+    .list{
+        width: 500px;
+    }
+    .page{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+    }
+</style>
+<body>
+<div class="page">
+    <div>
+        {% include 'user_panel.html' %}
+        {% block content %}
+        {% endblock %}
+    </div>
+</div>
+</body>
+</html>

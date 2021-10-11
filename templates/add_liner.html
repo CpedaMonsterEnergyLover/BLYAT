@@ -1,0 +1,16 @@
+{% extends 'root.html' %}
+{% block title %}
+    лайнеры
+{% endblock %}
+{%  block content %}
+    {% include 'header.html' with selected_liner=True %}<br>
+    {% include 'button_back.html' with button='лайнеров' path='/liner/list' %}
+    <h3>Добавить лайнер</h3>
+    <div class="list">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Submit" class="inputbutton">
+        </form>
+    </div>
+{% endblock %}

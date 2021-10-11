@@ -1,0 +1,23 @@
+{% extends 'root.html' %}
+{% block title %}
+    экскурсии
+{% endblock %}
+{%  block content %}
+{% include 'header.html' with selected_excursion=True %}
+<div>
+    {% include 'button_add.html' with title='Список всех экскурсий' path='/excursion/new' button='экскурсию' %}
+    <div class="list">
+        {% for data in dataset %}
+        Дата: {{ data.date }}<br/>
+        Кол-во проданных билетов: {{ data.tickets }}<br/>
+        Круиз: {{ data.cruise.name }}<br/>
+        Лайнер: {{ data.liner.name }}<br/><br/>
+        {% if access %}
+        <a class="btn_add" href="http://127.0.0.1:8000/excursion/{{ data.id }}/update">Изменить</a>
+        <a class="btn_add" href="http://127.0.0.1:8000/excursion/{{ data.id }}/delete">Удалить</a>
+        {% endif %}
+        <hr/>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
