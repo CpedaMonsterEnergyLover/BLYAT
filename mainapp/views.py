@@ -1,10 +1,8 @@
 from django.contrib.auth import logout, authenticate
-from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
-from django.views.generic import CreateView, UpdateView, DeleteView
 
 from mainapp.forms import RegisterForm
-from mainapp.models import Cruise, Excursion, Liner
+
 
 
 def exit_view(request):
